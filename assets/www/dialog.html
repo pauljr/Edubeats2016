@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+        <title>Edubeats</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+       
+      <!-- <script type="text/javascript" charset="utf-8" src="phonegap.js"></script> -->  
+        <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+</head>
+<body>
+
+	<!-- Begin Metaphor and Simile Examples--Popup Dialog 
+				     This should pop up when user requests to see an 
+				     example of a metaphor or simile while writing a 
+				     verse-->
+
+        <div data-role="dialog" id="dialog" class="ui-page ui-body-c ui-dialog ui-overlay-a ui-page-active" style="min-height: 408px;" data-theme="e" id="bottom-left">
+        	<div role="dialog" id="dialog_" class="ui-dialog-contain ui-corner-all ui-overlay-shadow">
+         		<div data-role="header" data-rel="back" data-theme="e" class="ui-corner-top ui-header ui-bar-d" role="banner">
+           			<a href="right.html" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-btn ui-btn-up-d ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close">
+           				<span class="ui-btn-inner ui-btn-corner-all">
+           					<span class="ui-btn-text">Close</span>
+           						<span class="ui-icon ui-icon-delete ui-icon-shadow"> </span>
+           				</span>
+           			</a>
+           			<h1 class="ui-title" role="heading" aria-level="1">Example</h1>
+           		</div>
+           		<div data-role="content" class="verseExample">
+                	<a href="#" id="metaphorsimile2">Metaphor</a>
+                	<a href="#" id="metaphorsimile0">Simile</a>
+                	<a href="#" id="metaphorsimile1">Metaphor</a>
+                	
+                	<a href="right.html" data-role="button" data-rel="back" data-theme="c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c" data-transition="none" data-direction="reverse">
+                		<span class="ui-btn-inner ui-btn-corner-all">
+                			<span class="ui-btn-text">Continue</span>
+                		</span>
+                	</a>
+            	</div>
+        
+    		</div>
+    	</div>
+    	
+    			<!-- End Metaphor and Simile Examples--Popup Dialog -->
+
+</body>
+</html>

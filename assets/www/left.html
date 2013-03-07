@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+        <title>Edubeats</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <style>
+            html, body {
+                margin: 0px;
+                padding: 0px;
+                background-color:#333;
+            }
+            .whitekey0, .blackkey0 {     color:#AC009E; }
+            .whitekey1, .blackkey1 {     color:#FF8009; }
+            .whitekey2, .blackkey2 {     color:#4066FF; }
+                        
+            .whitekey0, .whitekey1, .whitekey2 {
+                text-align:center;
+                font-size:130%;
+                font-family:"Verdana", Helvetica, Gill Sans, "Times New Roman", Georgia, Serif;
+                font-weight:900;
+                float: left;
+                z-index:0;
+                padding-top:63px;
+                width:44px;
+                height:53px;
+                margin-top:17px;
+                text-shadow:0px 0px 3px #000;
+                background-image:url("images/whitekey2.png");
+            }
+            .blackkey0, .blackkey1, .blackkey2 {
+                position:absolute;
+                float:left;
+                margin-left: auto;
+                margin-right: auto;
+                text-align:center;
+                font-weight:900;
+                font-size:130%;
+                padding-top:61px;
+                vertical-align:baseline;
+                font-family:"Verdana", Helvetica, Gill Sans, "Times New Roman", Georgia, Serif;
+                z-index:1;
+                width:30px;
+                height:31px;
+                margin-top:17px;
+                text-shadow:0px 0px 3px #fff;
+                background-image:url("images/blackkey2.png");
+                background-repeat:no-repeat;
+            }
+            
+            .whitekeypress {
+                background-image:url("images/whiteKeyRight2.png");
+            }
+            .whitekeypresswrong {
+                background-image:url("images/whiteKeyWrong2.png");
+            }
+            .blackkeypress {
+                background-image:url("images/blackKeyRight2.png");
+                background-repeat:no-repeat;
+            }
+            .blackkeypresswrong {
+                background-image:url("images/blackKeyWrong2.png");
+                background-repeat:no-repeat;
+            }          
+            #extraSwagEnergy1 {
+            	margin-top:3px;
+            	width:164px;
+            	height:30px;
+            	background:url("images/swagChallenge.png") no-repeat;
+            	background-size:80% 110%;
+            	float:left;
+            }
+            #metaphorsimile0 {
+                background:url("images/test/metaphor-Example.png") no-repeat;
+                background-size:contain;
+                background-position:center;
+                width:40px;
+                height:30px;
+                z-index:3;
+            }
+            #metaphorsimile1 {
+                background:url("images/test/simile-Example.png") no-repeat;
+                background-size:contain;
+                background-position:center;
+                width:40px;
+                height:30px;
+                z-index:3;
+            }
+            #metaphorsimile2 {
+                background:url("images/swagger.png") no-repeat;
+                background-size:contain;
+                background-position:center;
+                width:40px;
+                height:30px;
+                z-index:4;
+            }
+
+            .clearfix:after {
+				 visibility: hidden;
+				 display: block;
+				 font-size: 0;
+				 content: " ";
+				 clear: both;
+				 height: 0;
+			}
+			.clearfix { display: inline-block; }
+			/* start commented backslash hack \*/
+			* html .clearfix { height: 1%; }
+			.clearfix { display: block; }
+			/* close commented backslash hack */
+        </style>
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+       
+      <!-- <script type="text/javascript" charset="utf-8" src="phonegap.js"></script> -->  
+        <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+</head>
+<body>
+
+	<!-- Beginning of Page One (idLEFT): Contains the Swag Area showing which Badges/Assessments have been unlocked -->
+  		
+  		
+  		<div data-role="page" data-theme="e" id="left" class=ui-grid-c>
+  				<div data-role="header" data-theme="e" id="swagArea">Math Swag Area</div>
+  				
+  				<div data-role="content" class="ui-bar ui-grid-c" data-theme="e" id=mySwagArea>
+  					<div class="ui-block-a"><h3 style="margin-top:10px;">Swag Points</h3></div>
+  					<div class="ui-block-b"><label for="totalPoints" style="margin:8px 10px 0 0; text-align:right;">Math</label></div>
+  					<div class="ui-block-c"><input id="totalPoints" value="5000" placeholder="4000"></div>	 
+  					<div class="ui-block-d">
+						<div style="margin:6px 0 0 10px;"><a href="right.html" data-role="button" data-theme="b" id="hint">Match This Sound</a></div>
+					</div>
+					<div class="ui-grid-solo">
+							<table id="points">
+						      <tbody>
+	                        	<tr class="pointRow">
+	                         	   <td id="roundHeader">
+	                            	    Earned <br /> Badges</td>
+	                            	<td class="pointButton">
+	                                	<div data-role="button" id="token0" class="getPoint">Practice Skills</div>
+	                            	</td>
+	                            	<td class="pointButton">
+	                                	<div data-role="button" id="token2" class="getPoint">Use Lyrical Devices</div>
+	                            	</td>
+	                        	</tr>
+	                        	<tr class="pointRow">
+	                            	<td>Round <br /><span id="roundNumber">1</span></td>
+	                            	<td class="pointButton">
+	                                	<div data-role="button" id="token1" class="getPoint">Ask for Opinions</div>
+	                           		</td>
+	                            	<td class="pointButton">
+	                                	<div data-role="button" id="token3" class="getPoint">Promote Your Work</div>
+	                            	</td>
+	                        	</tr>
+	                       	   </tbody>
+	                    	</table>						
+					</div>
+				</div>
+				
+				<div data-role="footer" data-theme="a" class="ui-bar ui-grid-c">
+					<div class="ui-block-a"><h3 style="margin-top:10px;">Instructions</h3></div>
+					<div class="ui-block-b"><label for="value" style="margin:8px 10px 0 0; text-align:right;">Press</label></div>
+					<div class="ui-block-c"><input type="text" id="value" value="Match This Sound" placeholder="Match This Sound"></div>	 
+					<div class="ui-block-d"><h3 style="margin-top:10px;"> </h3></div>
+				</div><!-- /footer -->
+						
+					
+		</div>
+		
+		  		<!-- End of Page One (idLEFT): Contains the Swag Area showing which Badges/Assessments have been unlocked -->
+	
+
+</body>
+</html>

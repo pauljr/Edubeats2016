@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+        <title>Edubeats</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <style>
+            html, body {
+                margin: 0px;
+                padding: 0px;
+                background-color:#333;
+            }
+            .whitekey0, .blackkey0 {     color:#AC009E; }
+            .whitekey1, .blackkey1 {     color:#FF8009; }
+            .whitekey2, .blackkey2 {     color:#4066FF; }
+                        
+            .whitekey0, .whitekey1, .whitekey2 {
+                text-align:center;
+                font-size:130%;
+                font-family:"Verdana", Helvetica, Gill Sans, "Times New Roman", Georgia, Serif;
+                font-weight:900;
+                float: left;
+                z-index:0;
+                padding-top:63px;
+                width:44px;
+                height:53px;
+                margin-top:17px;
+                text-shadow:0px 0px 3px #000;
+                background-image:url("images/whitekey2.png");
+            }
+            .blackkey0, .blackkey1, .blackkey2 {
+                position:absolute;
+                float:left;
+                margin-left: auto;
+                margin-right: auto;
+                text-align:center;
+                font-weight:900;
+                font-size:130%;
+                padding-top:61px;
+                vertical-align:baseline;
+                font-family:"Verdana", Helvetica, Gill Sans, "Times New Roman", Georgia, Serif;
+                z-index:1;
+                width:30px;
+                height:31px;
+                margin-top:17px;
+                text-shadow:0px 0px 3px #fff;
+                background-image:url("images/blackkey2.png");
+                background-repeat:no-repeat;
+            }
+            
+            .whitekeypress {
+                background-image:url("images/whiteKeyRight2.png");
+            }
+            .whitekeypresswrong {
+                background-image:url("images/whiteKeyWrong2.png");
+            }
+            .blackkeypress {
+                background-image:url("images/blackKeyRight2.png");
+                background-repeat:no-repeat;
+            }
+            .blackkeypresswrong {
+                background-image:url("images/blackKeyWrong2.png");
+                background-repeat:no-repeat;
+            }          
+            #extraSwagEnergy1 {
+            	margin-top:3px;
+            	width:164px;
+            	height:30px;
+            	background:url("images/swagChallenge.png") no-repeat;
+            	background-size:80% 110%;
+            	float:left;
+            }
+            #metaphorsimile0 {
+                background:url("images/test/metaphor-Example.png") no-repeat;
+                background-size:contain;
+                background-position:center;
+                width:40px;
+                height:30px;
+                z-index:3;
+            }
+            #metaphorsimile1 {
+                background:url("images/test/simile-Example.png") no-repeat;
+                background-size:contain;
+                background-position:center;
+                width:40px;
+                height:30px;
+                z-index:3;
+            }
+            #metaphorsimile2 {
+                background:url("images/swagger.png") no-repeat;
+                background-size:contain;
+                background-position:center;
+                width:40px;
+                height:30px;
+                z-index:4;
+            }
+
+            .clearfix:after {
+				 visibility: hidden;
+				 display: block;
+				 font-size: 0;
+				 content: " ";
+				 clear: both;
+				 height: 0;
+			}
+			.clearfix { display: inline-block; }
+			/* start commented backslash hack \*/
+			* html .clearfix { height: 1%; }
+			.clearfix { display: block; }
+			/* close commented backslash hack */
+        </style>
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+       
+      <!-- <script type="text/javascript" charset="utf-8" src="phonegap.js"></script> -->  
+        <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+</head>
+<body>
+
+	<!-- Beginning of Page Two (idRIGHT): Contains the Activity with Piano and Answer Buttons -->
+		<div data-role="page" data-theme="e" id="right">
+
+        		<div data-role="header" data-theme="e" id="isCorrect">Does the piano matches the hint?</div>
+               	
+               	<div data-role="content" id="main">
+                	<div data-role="button" id="stop">Pause Music</div>         
+                	<a href="left.html" data-role="button" data-inline="true" data-transition="pop">Hear Sound Again</a>
+                	       
+                	<div id="piano0" class="clearfix">
+                		<div id="key10" class="whitekey0" style="margin-left: 45px;"></div>
+						<div id="key20" class="blackkey0" style="left:72px"></div>
+						<div id="key30" class="whitekey0"></div>
+						<div id="key40" class="blackkey0" style="left:119px"></div>
+						<div id="key50" class="whitekey0"></div>
+						<div id="key60" class="whitekey0"></div>
+						<div id="key70" class="blackkey0" style="left:208px"></div>
+						<div id="key80" class="whitekey0"></div>
+						<div id="key90" class="blackkey0" style="left:253px"></div>
+						<div id="key100" class="whitekey0"></div>
+						<div id="key110" class="blackkey0" style="left:297px"></div>
+						<div id="key120" class="whitekey0"></div>
+						<div id="key130" class="whitekey0"></div>
+						<div id="key140" class="blackkey0" style="left:383px"></div>
+						<div id="key150" class="whitekey0"></div>
+						<div id="key160" class="blackkey0" style="left:430px"></div>
+						<div id="key170" class="whitekey0"></div>
+					</div>
+                </div>
+                
+                <!-- These <a href's> must change dynamically so that the right verse will be written 
+                (change dialog_help1.html so that 1 turns into a 2, then 3, then 4) -->
+                
+               	<div data-role="controlgroup" class="ui-hide-label">
+               		<a href="dialog_help1.html" data-role="button" data-theme="e" id="problem0" data-rel="dialog" data-transition="pop" class="answer">Purple Problem</a>
+                	<a href="dialog_help1.html" data-role="button" data-theme="e" id="problem1" data-rel="dialog" data-transition="pop" class="answer">Orange Problem</a>
+                	<a href="dialog_help1.html" data-role="button" data-theme="e" id="problem2" data-rel="dialog" data-transition="pop" class="answer">Green Problem</a>
+                
+                	<div data-role="fieldcontain" class="ui-hide-label">
+                		<label for="swagcheck">What's the Answer?</label>
+                		<input type="text" name="swagcheck" id="swagCheck" value="" placeholder="What's the Answer?"/>
+             		</div>	
+         		</div>
+         		
+         		<div data-role="footer">
+         			<h3>On this piano, click the operations in the order that they should be performed to increase your Swag Points (OPERATIONS ARE: x, ÷, +, -).</h3>
+         		</div>
+         		
+         		
+  		</div> <!-- End of Page 2 (idRIGHT): Contains Piano with Answer Buttons -->
+
+</body>
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+        <title>Edubeats</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+       
+      <!-- <script type="text/javascript" charset="utf-8" src="phonegap.js"></script> -->  
+        <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+        <script>
+
+    	function onLoad(){
+       		document.addEventListener("deviceready",onDeviceReady, true);
+		}
+
+    	function onDeviceReady(){
+			navigator.notification.alert("PhoneGap is working!!");
+    	}
+  		</script>
+</head>
+
+<body onload="onLoad();">
+		
+		<!-- Beginning of Page Two (idRIGHT): Contains the Activity with Piano and Answer Buttons -->
+		<div data-role="page" data-theme="e" id="right">
+
+        		<div data-role="header" data-theme="e" id="isCorrect">Does the piano matches the hint?</div>
+               	
+               	<div data-role="content" id="main">
+                	<div data-role="button" id="stop">Pause Music</div>         
+                	<a href="#left" data-role="button" data-inline="true" data-transition="pop">Hear Sound Again</a>
+                	       
+                	<div id="piano0" class="clearfix">
+                		<div id="key10" class="whitekey0" style="margin-left: 45px;"></div>
+						<div id="key20" class="blackkey0" style="left:72px"></div>
+						<div id="key30" class="whitekey0"></div>
+						<div id="key40" class="blackkey0" style="left:119px"></div>
+						<div id="key50" class="whitekey0"></div>
+						<div id="key60" class="whitekey0"></div>
+						<div id="key70" class="blackkey0" style="left:208px"></div>
+						<div id="key80" class="whitekey0"></div>
+						<div id="key90" class="blackkey0" style="left:253px"></div>
+						<div id="key100" class="whitekey0"></div>
+						<div id="key110" class="blackkey0" style="left:297px"></div>
+						<div id="key120" class="whitekey0"></div>
+						<div id="key130" class="whitekey0"></div>
+						<div id="key140" class="blackkey0" style="left:383px"></div>
+						<div id="key150" class="whitekey0"></div>
+						<div id="key160" class="blackkey0" style="left:430px"></div>
+						<div id="key170" class="whitekey0"></div>
+					</div>
+                </div>
+                
+               	<div data-role="controlgroup" class="ui-hide-label">
+               		<a href="#left" data-role="button" data-theme="e" id="problem0" data-rel="dialog" data-transition="pop" class="answer">Purple Problem</a>
+                	<a href="#left" data-role="button" data-theme="e" id="problem1" data-rel="dialog" data-transition="pop" class="answer">Orange Problem</a>
+                	<a href="#left" data-role="button" data-theme="e" id="problem2" data-rel="dialog" data-transition="pop" class="answer">Green Problem</a>
+                
+                	<div data-role="fieldcontain" class="ui-hide-label">
+                		<label for="swagcheck">What's the Answer?</label>
+                		<input type="text" name="swagcheck" id="swagCheck" value="" placeholder="What's the Answer?"/>
+             		</div>	
+         		</div>
+         		
+         		<div data-role="footer">
+         			<h3>On this piano, click the operations in the order that they should be performed to increase your Swag Points (OPERATIONS ARE: x, ÷, +, -).</h3>
+         		</div>
+         		
+         		
+  		</div> <!-- End of Page 2 (idRIGHT): Contains Piano with Answer Buttons -->
+  		
+  		
+  		
+  		<!-- Beginning of Page One (idLEFT): Contains the Swag Area showing which Badges/Assessments have been unlocked -->
+  		
+  		
+  		<div data-role="page" data-theme="e" id="left" class=ui-grid-c>
+  				<div data-role="header" data-theme="e" id="swagArea">Math Swag Area</div>
+  				
+  				<div data-role="content" class="ui-bar ui-grid-c" data-theme="e" id=mySwagArea>
+  					<div class="ui-block-a"><h3 style="margin-top:10px;">Swag Points</h3></div>
+  					<div class="ui-block-b"><label for="totalPoints" style="margin:8px 10px 0 0; text-align:right;">Math</label></div>
+  					<div class="ui-block-c"><input id="totalPoints" value="5000" placeholder="4000"></div>	 
+  					<div class="ui-block-d">
+						<div style="margin:6px 0 0 10px;"><a href="" data-role="button" data-theme="b" id="hint">Match this sound</a></div>
+					</div>
+					<div class="ui-grid-solo">
+						<div class="ui-bar ui-block-a">
+							<table id="points">
+						      <tbody>
+	                        	<tr class="pointRow">
+	                         	   <td id="roundHeader">
+	                            	    Earned <br /> Badges</td>
+	                            	<td class="pointButton">
+	                                	<div data-role="button" id="token0" class="getPoint">Practice Skills</div>
+	                            	</td>
+	                            	<td class="pointButton">
+	                                	<div data-role="button" id="token2" class="getPoint">Use Lyrical Devices</div>
+	                            	</td>
+	                        	</tr>
+	                        	<tr class="pointRow">
+	                            	<td>Round <br /><span id="roundNumber">1</span></td>
+	                            	<td class="pointButton">
+	                                	<div data-role="button" id="token1" class="getPoint">Ask for Opinions</div>
+	                           		</td>
+	                            	<td class="pointButton">
+	                                	<div data-role="button" id="token3" class="getPoint">Promote Your Work</div>
+	                            	</td>
+	                        	</tr>
+	                       	   </tbody>
+	                    	</table>
+						</div>
+					</div>
+				</div>
+				
+				<div data-role="footer" data-theme="a" class="ui-bar ui-grid-c">
+					<div class="ui-block-a"><h3 style="margin-top:10px;">Instructions</h3></div>
+					<div class="ui-block-b"><label for="value" style="margin:8px 10px 0 0; text-align:right;">Press</label></div>
+					<div class="ui-block-c"><input type="text" id="value" value="Match Sound Button" placeholder="Match Sound Button"></div>	 
+					<div class="ui-block-d"><h3 style="margin-top:10px;">Instructions</h3></div>
+				</div><!-- /footer -->
+						
+					
+		</div>
+		
+		  		<!-- End of Page One (idLEFT): Contains the Swag Area showing which Badges/Assessments have been unlocked -->
+	
+	
+
+        <!-- verse dialog boxes: each box should be a page, like the first one -->
+        
+        		<!-- Begin Verse 1 (idWRITEVERSE1): Written around 100 points -->
+                <div data-role="page" id="writeverse1">
+					<a href="#dialog" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">See Example</a>            
+                	<div data-role="header"> Write your verse </div>
+                    	<div data-role="content" class="verse" id="verse_note1">
+                    		<div data-role="fieldcontain" class="ui-hide-label">
+								<label for="verse1">First 4-Bars: Come Strong!</label>
+								<textarea name="verse1" id="verse1" class="writingSample" value="" placeholder="First 4-Bars: Come Strong!"> </textarea>
+							</div>
+						</div>
+						<div data-role="footer">
+                        	<p id="challenge1">Use a Metaphor in your verse for extra points</p>
+                        	<p id="example1">
+                            	For example: <em>"The world is a stage."</em>
+                        	</p>
+				       	
+				       		<a href="dialog_help1" data-role="button" data-theme="f" id="stop1">Confirm Swag</a>
+            			</div>
+            	</div>
+                 	<!-- End Verse 1 (idWRITEVERSE1) -->
+                    
+
+    			
+    	<!-- Dialog One (Main):  -->
+    	
+    	<div data-role="dialog" id="dialog_help1" class="dialog1 ui-page ui-body-c ui-dialog ui-overlay-a ui-page-active" style="min-height: 408px;" data-theme="e" id="bottom-left">
+        	<div role="dialog" id="dialog1" class="ui-dialog-contain ui-corner-all ui-overlay-shadow">
+         		<div data-role="header" data-theme="e" class="ui-corner-top ui-header ui-bar-d" role="banner">
+           			<a href="#left" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-btn ui-btn-up-d ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close">
+           				<span class="ui-btn-inner ui-btn-corner-all">
+           					<span class="ui-btn-text">Close</span>
+           						<span class="ui-icon ui-icon-delete ui-icon-shadow"> </span>
+           				</span>
+           			</a>
+           			<h1 class="ui-title" role="heading" aria-level="1">Get Swag!</h1>
+           		</div>
+           		<div data-role="content" class="verseExample">
+					<p>To be an MC you have to Grind and Earn </p>
+                    <p>your badges. Let's start by doing the math!</p>
+                	
+                	<a href="#left" data-role="button" data-theme="c" data-rel="back" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c" data-transition="none" data-direction="reverse">
+                		<span class="ui-btn-inner ui-btn-corner-all">
+                			<span class="ui-btn-text">Continue</span>
+                		</span>
+                	</a>
+            	</div>
+        
+    		</div>
+    	</div>
+        <!-- Dialog One -->
+        
+
+    	
+    	<!-- Begin scripts for interaction -->
+    	<script type="text/javascript" src="ProbFile/problems.js"></script>
+        <script>
+            var grind = new Array("Practice-Skills", "Ask-for-Opinions", "Use-Lyrical-Devices", "Promote-Your-Work");
+            var superProblem = new Array();
+            var superProblemIndex = -1;
+            var superProblemsIndex = 0;
+            var inOrder = new Array();
+            var correctIndex = -1;
+            var correctOrder = new Array();
+            var wrongCount = 0;
+            var superProblemStarts = new Array();
+            var problemColor = ["press0", "press1", "press2"];
+            var roundNumber = 0;
+            var problemNumber = 0;
+            var gamePoints = 0;
+            var verseOn = 0;
+            //var grindMessage = new Array("Practice-Skills", "Ask-for-Opinions", "Use-Lyrical-Devices", "Promote-Your-Work");
+            nextSuperProblem();
+
+            var key = new Array();
+            
+            for(var i=0; i<3; i++) {
+            	key["key1"+i] = new Media("/android_asset/www/key1_C1.mp3");
+            }
+            for(var i=0; i<3; i++) {
+	            key["key2"+i] = new Media("/android_asset/www/key2_CC1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key3"+i] = new Media("/android_asset/www/key3_D1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key4"+i] = new Media("/android_asset/www/key4_DD1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key5"+i] = new Media("/android_asset/www/key5_E1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key6"+i] = new Media("/android_asset/www/key6_F1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key7"+i] = new Media("/android_asset/www/key7_FF1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key8"+i] = new Media("/android_asset/www/key8_G1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key9"+i] = new Media("/android_asset/www/key9_GG1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key10"+i] = new Media("/android_asset/www/key10_A1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key11"+i] = new Media("/android_asset/www/key11_AA1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key12"+i] = new Media("/android_asset/www/key12_B1.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key13"+i] = new Media("/android_asset/key13_C2.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key14"+i] = new Media("/android_asset/key14_CC2.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key15"+i] = new Media("/android_asset/key15_D2.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key16"+i] = new Media("/android_asset/key16_DD2.mp3");
+	        }
+	        for(var i=0; i<3; i++) {
+	            key["key17"+i] = new Media("/android_asset/key17_E2.mp3");
+	        }
+
+            var makeVerse = new Array();
+            makeVerse["makeVerse1"] = new Media("/android_asset/makeverse1.ogg");
+            makeVerse["makeVerse2"] = new Media("/android_asset/makeverse2.ogg");
+            makeVerse["makeVerse3"] = new Media("/android_asset/makeverse3.ogg");
+            makeVerse["makeVerse4"] = new Media("/android_asset/makeverse4.ogg");
+
+            // var grindMessage = new Array("Practice-Skills", "Ask-for-Opinions", "Use-Lyrical-Devices", "Promote-Your-Work");
+            //             
+
+            $("#stop").hide();
+            $(".verse").hide();
+            $(".dialog2").hide();
+            $(".dialog3").hide();
+            $(".dialog4").hide();
+            $(".verseExample").hide();
+            $("#metaphorsimile0").hide();
+            $("#metaphorsimile1").hide();
+            $("#metaphorsimile2").hide();
+            $(".dialog1").fadeIn(1000).delay(2000).fadeOut(1000);
+            // 	$(".dialog").show();
+
+            //NEXT FEW FUNCTIONS HIGHLIGHT KEYS EITHER RED OR GREEN
+            //WHEN MOUSE IS CLICKED AND RELEASED
+            
+           
+            $(".whitekey0").vmousedown(function () {
+                keyname = $(this).attr('id'); //i.e. "key1", "key2", etc....
+                key[keyname].play(); //PLAYS THE APPROPRIATE KEY
+                var j = parseInt(keyname[keyname.length - 1]);
+					if (inOrder[j][0] == keyname) { //IF CORRECT...
+						$(this).addClass('whitekeypress'); //HIGHLIGHT KEY GREEN FOR AS LONG AS THE MOUSE IS DOWN
+						inOrder[j].shift(); //REMOVE THE OPERATION FROM THE LIST 
+						gamePoints = gamePoints + 10;
+						$("#totalPoints").html(gamePoints);
+					} else { //OTHERWISE...
+						$(this).addClass('whitekeypresswrong'); //HIGHLIGHT KEY RED FOR AS LONG AS THE MOUSE IS DOWN
+						gamePoints = gamePoints - 10;
+						$("#totalPoints").html(gamePoints);
+					}
+				
+            });
+            $(".whitekey1").vmousedown(function () {
+                keyname = $(this).attr('id'); //i.e. "key1", "key2", etc....
+                key[keyname].play(); //PLAYS THE APPROPRIATE KEY
+                var j = parseInt(keyname[keyname.length - 1]);
+					if (inOrder[j][0] == keyname) { //IF CORRECT...
+						$(this).addClass('whitekeypress'); //HIGHLIGHT KEY GREEN FOR AS LONG AS THE MOUSE IS DOWN
+						inOrder[j].shift(); //REMOVE THE OPERATION FROM THE LIST 
+						gamePoints = gamePoints + 10;
+						$("#totalPoints").html(gamePoints);
+					} else { //OTHERWISE...
+						$(this).addClass('whitekeypresswrong'); //HIGHLIGHT KEY RED FOR AS LONG AS THE MOUSE IS DOWN
+						gamePoints = gamePoints - 10;
+						$("#totalPoints").html(gamePoints);
+					}
+				
+            });
+            $(".whitekey2").vmousedown(function () {
+                keyname = $(this).attr('id'); //i.e. "key1", "key2", etc....
+                key[keyname].play(); //PLAYS THE APPROPRIATE KEY
+                var j = parseInt(keyname[keyname.length - 1]);
+					if (inOrder[j][0] == keyname) { //IF CORRECT...
+						$(this).addClass('whitekeypress'); //HIGHLIGHT KEY GREEN FOR AS LONG AS THE MOUSE IS DOWN
+						inOrder[j].shift(); //REMOVE THE OPERATION FROM THE LIST 
+						gamePoints = gamePoints + 10;
+						$("#totalPoints").html(gamePoints);
+					} else { //OTHERWISE...
+						$(this).addClass('whitekeypresswrong'); //HIGHLIGHT KEY RED FOR AS LONG AS THE MOUSE IS DOWN
+						gamePoints = gamePoints - 10;
+						$("#totalPoints").html(gamePoints);
+					}
+				
+            });
+
+            $(".whitekey0").vmouseup(function () {
+                $(this).removeClass('whitekeypress');
+                $(this).removeClass('whitekeypresswrong');
+            });
+            $(".whitekey1").vmouseup(function () {
+                $(this).removeClass('whitekeypress');
+                $(this).removeClass('whitekeypresswrong');
+            });
+            $(".whitekey2").vmouseup(function () {
+                $(this).removeClass('whitekeypress');
+                $(this).removeClass('whitekeypresswrong');
+            });
+
+            $(".blackkey0").vmousedown(function () {
+                keyname = $(this).attr('id');
+                key[keyname].play();
+                var j = parseInt(keyname[keyname.length - 1]);
+					if (inOrder[j][0] == keyname) {
+						$(this).addClass('blackkeypress');//HIGHLIGHT KEY GREEN FOR AS LONG AS THE MOUSE IS DOWN
+						inOrder[j].shift();//REMOVE THE OPERATION FROM THE LIST 						
+						gamePoints = gamePoints + 10;
+						$("#totalPoints").html(gamePoints);
+					} else {
+						$(this).addClass('blackkeypresswrong');
+						gamePoints = gamePoints - 10;
+						$("#totalPoints").html(gamePoints);
+					}
+				
+            });
+            $(".blackkey1").vmousedown(function () {
+                keyname = $(this).attr('id');
+                key[keyname].play();
+                var j = parseInt(keyname[keyname.length - 1]);
+					if (inOrder[j][0] == keyname) {
+						$(this).addClass('blackkeypress');//HIGHLIGHT KEY GREEN FOR AS LONG AS THE MOUSE IS DOWN
+						inOrder[j].shift();//REMOVE THE OPERATION FROM THE LIST 						
+						gamePoints = gamePoints + 10;
+						$("#totalPoints").html(gamePoints);
+					} else {
+						$(this).addClass('blackkeypresswrong');
+						gamePoints = gamePoints - 10;
+						$("#totalPoints").html(gamePoints);
+					}
+				
+            });
+            $(".blackkey2").vmousedown(function () {
+                keyname = $(this).attr('id');
+                key[keyname].play();
+                var j = parseInt(keyname[keyname.length - 1]);
+					if (inOrder[j][0] == keyname) {
+						$(this).addClass('blackkeypress');//HIGHLIGHT KEY GREEN FOR AS LONG AS THE MOUSE IS DOWN
+						inOrder[j].shift();//REMOVE THE OPERATION FROM THE LIST 						
+						gamePoints = gamePoints + 10;
+						$("#totalPoints").html(gamePoints);
+					} else {
+						$(this).addClass('blackkeypresswrong');
+						gamePoints = gamePoints - 10;
+						$("#totalPoints").html(gamePoints);
+					}
+				
+            });
+
+            $(".blackkey0").vmouseup(function () {
+                $(this).removeClass('blackkeypress');
+                $(this).removeClass('blackkeypresswrong');
+            });
+            $(".blackkey1").vmouseup(function () {
+                $(this).removeClass('blackkeypress');
+                $(this).removeClass('blackkeypresswrong');
+            });
+            $(".blackkey2").vmouseup(function () {
+                $(this).removeClass('blackkeypress');
+                $(this).removeClass('blackkeypresswrong');
+            });
+            //END OF FEW FUNCTIONS HIGHLIGHTing KEYS EITHER RED OR GREEN
+            //WHEN MOUSE IS CLICKED AND RELEASED
+
+            //CYCLE THROUGH PROBLEMS
+            $("#previous").click(function () {
+                if (superProblemIndex != 0) superProblemIndex--;
+                createProblem(superProblem[superProblemIndex]);
+            });
+
+            $("#next").click(function () {
+                if (superProblemIndex != 2) superProblemIndex++;
+                createProblem(superProblem[superProblemIndex]);
+            });
+
+            $(".writingSample").focus(function () {
+                $(this).css("background", "none")
+            }).blur(function () {
+                if ($(this)[0].value == '') {
+                    $(this).css("background", "url(images/writingSample.png) center center no-repeat")
+                }
+            });
+            
+
+            //CALLED BY createSuperProblems() AND [createProblem() - correctOrder ARRAY]
+            //GETS THE CORRECT ORDER OF THE OPERATIONS TO BE PERFORMED.
+            //THIS WILL IDENTIFY WHICH KEYS TO PRESS
+            //CONTENTS OF order ARE PLACED AT THE END
+            //OF THE ARRAY.  USER WILL HAVE TO FOLLOW 
+            //THE ORDER OF OPERATIONS IN ADDITION TO 
+            //THE LEFT-TO-RIGHT RULE.
+            function getOrder(problemIndex) {
+                var problem = superProblems[roundNumber][problemIndex];
+                var problemArray = [[],[],[]];
+                var problemLength = new Array();
+                var problemStart = new Array();
+                
+                for(var i=0; i<superProblems[roundNumber][problemIndex].length;i++) {
+	                problemArray[i] = problem[i].split(" ");
+	            }
+	            
+                for(var j=0; j<superProblems[roundNumber][problemIndex].length;j++) {
+                	problemLength[j] = problemArray[j].length;
+                }
+                problemStart = superProblemStarts;//[problemIndex]; //take the starting positions that have been determined 
+                var order = [[],[],[]];//new Array();
+
+                //WRITE THE TEXT ON THE KEYBOARD
+				for(var j=0; j<superProblems[roundNumber].length; j++) {
+					for (var i = 0; i < problemLength[j]+1;i++) {
+						$("#piano"+j).children().eq(i + problemStart[j]).text(problemArray[j][i]);
+					}
+				}
+				
+                //FIND THE ORDER OF THE OPERATION "TEXT" FOR EACH ARRAY.
+                ///FIRST PASS:MULTIPLICATION AND DIVISION (LEFT2RIGHT)///
+                //ADJUST FOR PARANTHESIS, AND SOMETHING MORE CONCRETE AND 
+                //UNIQUE THAN TEXT.  THIS WILL HAVE LOTS OF BUGS, I PRESUME
+				for(var j=0; j<superProblems[roundNumber][problemNumber].length; j++) {	
+					for (var i = 0; i < problemLength[j]; i++) {
+						var id = $("#piano"+j).children().eq(i + problemStart[j]).attr('id');
+						if (problemArray[j][i] == "x" || problemArray[j][i] == "÷") {
+							order[j].push(id);
+						}
+					}
+				}
+
+                //FIND THE ORDER OF THE OPERATION "TEXT" FOR EACH ARRAY.
+                ///SECOND PASS:ADDITION AND SUBTRACTION (LEFT2RIGHT)///
+                //ADJUST FOR PARANTHESIS, AND SOMETHING MORE CONCRETE AND 
+                //UNIQUE THAN TEXT.  THIS WILL HAVE LOTS OF BUGS, I PRESUME
+				for(var j=0; j<superProblems[roundNumber][problemNumber].length; j++) {	
+					for (var i = 0; i < problemLength[j]; i++) {
+						var id = $("#piano"+j).children().eq(i + problemStart[j]).attr('id');
+						if (problemArray[j][i] == "+" || problemArray[j][i] == "-") {
+							order[j].push(id);
+						}
+					}
+				}
+                return order;
+                
+            }
+
+            //CALLED BY nextSuperProblem()
+            //superProblemIndex IS NOW RESET.  problem IS THE NEXT SET
+            //OF THREE PROBLEMS.  
+            //REMOVE CLASSES FROM ALL PIANO KEYS (BLACK AND WHITE), AND 
+            //ASSIGN THE PROBLEM COLOR
+            //HERE IS WHERE PROBLEMS ARE ASSIGNED THEIR COLOR: 
+            //[PURPLE - ORANGEY - GREEN] - IN THAT ORDER
+            //REMOVE ANY TEXT ON THE PIANO KEYS
+            //superProblemIndex IS USED AS THE INDEX FOR BOTH COLOR 
+            //AND PROBLEM.
+            function createProblem() {
+        //        var problem = superProblem[superProblemIndex];
+        		for(i=0;i<superProblem.length;i++) {
+					$('.whitekey'+i).each(function (index) {
+						$(this).removeClass('press'+i);
+						$(this).addClass(problemColor[i]);
+					});
+	
+					$('.blackkey'+i).each(function (index) {
+						$(this).removeClass('press'+i);
+						$(this).addClass(problemColor[i]);
+					});
+	
+					$('.whitekey'+i).each(function (index) {
+						$(this).text("");
+					});
+					$('.blackkey'+i).each(function (index) {
+						$(this).text("");
+					});
+	
+					//getOrder(problem) IS PASSED AFTER ALL CLASSES FROM KEYS
+					//ARE REMOVED -- CHANGE THIS NUMBER IF NUMBER OF PROBLEMS CHANGE (LOOK UP '3' FOR CLUES)
+					//correctIndex = Math.floor(Math.random() * 3);
+					//correctOrder = getOrder(superProblem[correctIndex]);
+					inOrder = getOrder(problemNumber);
+					//				superProblemsIndex++;
+				}
+            }
+
+            //THE SET OF 3 PROBLEMS AND INDEXES ARE RESET.
+            //HAPPENS ONLY AFTER USER SELECTS AN ANSWER
+            //superProblem and createProblem are also used in createProblem()
+            function nextSuperProblem() {
+                superProblem = superProblems[roundNumber][problemNumber]; //.pop(); //RESETS PROBLEMS: superProblems (3xn array) from a .js file called above, contains all superProblems ("SUPER PROBLEMS").
+                createSuperProblem(); //SETS UP PROBLEMS TO BE WRITTEN ON THE PIANO. RESETS superProblemIndex = 0
+                createProblem();
+            }
+
+            //CREATES A WAY FOR PROBLEMS TO BE WRITTEN
+            //ON TOP OF THE KEYBOARD.
+            //numberOfKeys: how many keys need to be 
+            //designated to lay down the problem on 
+            //the keyboard.
+            //superProblemIndex: indexed [0,3).  Represents 
+            //the three problems in the superProblem array.
+            //HAPPENS ONLY AFTER USER SELECTS AN ANSWER
+            function createSuperProblem() {
+            	for(var i=0; i<superProblems[roundNumber][problemNumber].length; i++) {
+					var numberOfKeys = $("#piano"+i).children().length;
+					superProblemIndex = 0; //INCEPTION: INDEX WHICH REPRESENTS THE THREE PROBLEMS IN THE superProblem ARRAY
+					for (var i = 0; i < superProblem.length; i++) {
+						var problem = superProblem[i]; //one of the problems from the superProblem array --> problemArray (i.e. "6 + 2 / 3") 
+						$("#problem" + i).text(superProblem[i]);
+	
+						var problemArray = problem.split(" "); //split the problem at spaces (adjustable)
+						var problemLength = problemArray.length;
+						var problemStart = Math.floor((Math.random() * (numberOfKeys - problemLength + 1)));
+						superProblemStarts[i] = problemStart; //array of starting positions for each problem (global)
+					}
+					/////////////////////////////////////////////////////fix
+					//RANDOMLY SELECTS A PROBLEM TO BE THE CORRECT ANSWER
+					//IDENTIFIED BY INDEX AND AN ARRAY WHICH CONTAINS THE 
+					//OPERATIONS IN THE CORRECT ORDER, WHICH IN TURN, IS THE 
+					//CORRECT ANSWER
+					correctIndex = Math.floor(Math.random() * 3);
+					correctOrder = getOrder(problemNumber)[correctIndex];
+				}
+            }
+
+            $(".answer").click(function () {
+                // Figure out what problem number in this specific round is
+                if ($(this).index(".answer") == correctIndex) {
+                    alert("Yeahh...Correct")
+                    $("div#token" + problemNumber).css("background", "url('images/point.png')");
+                    $("div#token" + problemNumber).css("background-size", "contain");
+                    $("div#token" + problemNumber).css("background-position", "center center");
+                    $("div#token" + problemNumber).css("background-repeat", "no-repeat");
+                   
+                   if($("#swagCheck").val()==eval((superProblems[roundNumber][problemNumber][correctIndex]).replace(/ /g,'').replace(/÷/g,'/').replace(/x/g,'*'))) {
+                	gamePoints=gamePoints+11;
+                	// $("#totalPoints").html(gamePoints);
+                	$(".dialog4").fadeIn(1000).delay(5000).fadeOut(1000);
+                	$("#swagCheck").val("");
+                }
+                   
+                    gamePoints = gamePoints + 50;
+                    $("#totalPoints").html(gamePoints);
+
+                } else {
+                    alert("Sorry buddy.  Maybe next time");
+                    $("div#token" + problemNumber).css("background", "url('images/wrong.png')");
+                    $("div#token" + problemNumber).css("background-size", "contain");
+                    $("div#token" + problemNumber).css("background-position", "center center");
+                    $("div#token" + problemNumber).css("background-repeat", "no-repeat");
+                    //          $("button#token" + problemNumber).text("WRONG");
+                    wrongCount++;
+                    gamePoints = gamePoints - 50;
+                    $("#totalPoints").html(gamePoints);
+
+                }
+
+                problemNumber++;
+
+                //what am i doing here? ahhhhhhh
+
+                if (problemNumber == superProblems[roundNumber].length) {
+
+                    problemNumber = 0;
+                    roundNumber++;
+
+                    for (var i = 0; i < superProblems[roundNumber - 1].length; i++) {
+                        $("div#token" + i).css("background", "");
+                        $("div#token" + i).text(grind[i]);
+                    }
+
+                }
+
+                $("#roundNumber").html(roundNumber + 1);
+                
+                // if($("#swagCheck").val()==eval((superProblems[roundNumber][problemNumber][correctIndex]).replace(/÷/g,'/').replace(/x/g,'*'))) {
+//                 	gamePoints=gamePoints+11;
+//                 	$("#totalPoints").html(gamePoints);
+//                 	$(".dialog4").fadeIn(1000).delay(5000).fadeOut(1000);
+//                 }
+
+                if (gamePoints >= (100 * (verseOn + 1))) {
+                    $("#stop").show();
+                    $("#metaphorsimile2").hide();
+                    if (verseOn < 4) {
+                        $(".dialog2").fadeIn(1000).delay(5000).fadeOut(1000);
+                    }
+                    $("#verse_note" + (verseOn + 1)).show();
+                    if (verseOn >= 1) {
+                        makeVerse["makeVerse" + verseOn].pause();
+                        makeVerse["makeVerse" + (verseOn + 1)].load();
+                        $("#metaphorsimile" + ((verseOn - 1) % 2)).hide();
+                    }
+                    makeVerse["makeVerse" + (verseOn + 1)].play();
+                    $(".verseExample").show();
+                    $("#metaphorsimile" + ((verseOn) % 2)).show();
+                    verseOn++;
+                }
+
+                nextSuperProblem();
+            });
+
+            $("#stop").click(function () {
+                if ((makeVerse["makeVerse" + (verseOn)].paused == false) && (verseOn >= 1)) {
+                    gamePoints = gamePoints + 0;
+                    $("#totalPoints").html(gamePoints);
+                    makeVerse["makeVerse" + (verseOn)].pause();
+                } else {
+                    gamePoints = gamePoints - 4;
+                    $("#totalPoints").html(gamePoints);
+                    makeVerse["makeVerse" + (verseOn)].play();
+                }
+            });
+
+            $("#stop1").click(function () {
+                if (makeVerse["makeVerse1"].paused == false) {
+                    gamePoints = gamePoints + 3;
+                    $("#totalPoints").html(gamePoints);
+                    $("#metaphorsimile2").show();
+                    makeVerse["makeVerse1"].pause();
+                } else {
+                    gamePoints = gamePoints - 4;
+                    $("#totalPoints").html(gamePoints);
+                    $("#metaphorsimile2").hide();
+                    makeVerse["makeVerse1"].play();
+                }
+            });
+
+            $("#stop2").click(function () {
+                if (makeVerse["makeVerse2"].paused == false) {
+                    gamePoints = gamePoints + 3;
+                    $("#totalPoints").html(gamePoints);
+                    $("#metaphorsimile2").show();
+                    makeVerse["makeVerse2"].pause();
+                } else {
+                    gamePoints = gamePoints - 4;
+                    $("#totalPoints").html(gamePoints);
+                    $("#metaphorsimile2").hide();
+                    makeVerse["makeVerse2"].play();
+                }
+            });
+
+            $("#stop3").click(function () {
+                if (makeVerse["makeVerse3"].paused == false) {
+                    gamePoints = gamePoints + 3;
+                    $("#totalPoints").html(gamePoints);
+                    $("#metaphorsimile2").show();
+                    makeVerse["makeVerse3"].pause();
+                } else {
+                    gamePoints = gamePoints - 4;
+                    $("#totalPoints").html(gamePoints);
+                    $("#metaphorsimile2").hide();
+                    makeVerse["makeVerse3"].play();
+                }
+            });
+
+            $("#stop4").click(function () {
+                if (makeVerse["makeVerse4"].paused == false) {
+                    gamePoints = gamePoints + 3;
+                    $("#totalPoints").html(gamePoints);
+                    makeVerse["makeVerse4"].pause();
+                    $("#metaphorsimile2").show();
+                    $(".dialog3").fadeIn(1000).delay(20000).fadeOut(1000);
+                } else {
+                    gamePoints = gamePoints - 4;
+                    $("#totalPoints").html(gamePoints);
+                    $("#metaphorsimile2").hide();
+                    makeVerse["makeVerse4"].play();
+                }
+            });
+
+
+
+            //PLAYS THE KEYS IN THE CORRECT ORDER OF THE CORRECT PROBLEM
+            $("#hint").click(function () {
+                for (var i = 0; i < correctOrder.length; i++) {
+                    setTimeout(function (j) {
+                        key[correctOrder[j]].play();
+                    }, 1000 * i, i);
+                }
+                //			alert(correctOrder);
+                gamePoints = gamePoints - 2;
+                $("#totalPoints").html(gamePoints);
+            });
+        </script>
+
+</body>
+
+</html>
