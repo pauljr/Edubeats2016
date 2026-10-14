@@ -1,0 +1,19 @@
+{
+  "id": "my-stem-song",
+  "title": "My Instrument Mixtape",
+  "audioMode": "stems",
+  "loopSeconds": 8,
+  "questionOffset": 7,
+  "structure": {"roundVerses":3,"versesPerRound":4},
+  "layers": [
+    {"id":"drums","label":"Drums","src":"drums.wav","gain":0.8,"offsetSeconds":0},
+    {"id":"bass","label":"Bass","src":"bass.wav","gain":0.7,"offsetSeconds":0},
+    {"id":"keys","label":"Keys","src":"keys.wav","gain":0.6,"offsetSeconds":0},
+    {"id":"lead","label":"Lead","src":"lead.wav","gain":0.5,"offsetSeconds":0}
+  ],
+  "difficulties": {
+    "easy":{"unlockThreshold":80,"correctMatches":2,"requiredPianos":1},
+    "normal":{"unlockThreshold":100,"correctMatches":3,"requiredPianos":3},
+    "hard":{"unlockThreshold":200,"correctMatches":4,"requiredPianos":3}
+  }
+}

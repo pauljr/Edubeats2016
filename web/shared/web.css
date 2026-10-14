@@ -1,0 +1,54 @@
+[hidden] { display:none!important; }
+html { min-height:100%; }
+body { padding-bottom:70px; }
+.web-toolbar { clear:both;position:fixed;bottom:0;left:0;right:0;z-index:20;background:#222;color:#fff;padding:9px 16px;display:flex;gap:12px;align-items:center;font:14px Arial,sans-serif;box-shadow:0 -2px 8px #0006; }
+.web-toolbar button { padding:7px 12px;cursor:pointer; }
+.web-status { flex:1; }
+[id^=piano] { position:relative;min-height:145px;touch-action:manipulation; }
+[id^=key] { cursor:pointer;user-select:none;touch-action:manipulation; }
+[id^=key]:focus-visible { outline:3px solid #f5d840;outline-offset:2px; }
+.answer { cursor:pointer; }
+iframe { border:0; }
+body[data-version=edubeats2016] { font-family:Helvetica,Arial,sans-serif; }
+body[data-version=edubeats2016] [data-role=page] { position:relative;min-height:calc(100vh - 65px);width:100%;box-sizing:border-box; }
+body[data-version=edubeats2016] [data-role=header],body[data-version=edubeats2016] [data-role=footer] { padding:10px;text-align:center; }
+body[data-version=edubeats2016] [data-role=content] { padding:15px; }
+body[data-version=edubeats2016] [data-role=button] { display:block;text-align:center;margin:8px;padding:12px;border-radius:1em;text-decoration:none;font-weight:bold;cursor:pointer; }
+body[data-version=edubeats2016] [data-inline=true] { display:inline-block; }
+body[data-version=edubeats2016] .ui-dialog-contain { max-width:500px; margin:10vh auto; }
+body[data-version=edubeats2016] input,body[data-version=edubeats2016] textarea { box-sizing:border-box;padding:10px;max-width:100%; }
+body[data-version=edubeats2016] textarea { width:100%;min-height:160px; }
+body[data-version=edubeats2016] #main { overflow-x:auto; }
+body[data-version=edubeats2016] [id^=piano] { width:490px; }
+body[data-version=edubeats2016] #points { width:100%; }
+body[data-version=edubeats2016] #metaphorsimile0,body[data-version=edubeats2016] #metaphorsimile1 { width:240px;height:180px; }
+body[data-version=edubeats2016] .ui-grid-c { width:auto; }
+body[data-version=edubeats] #console { min-height:800px; }
+@media(max-width:970px) {
+ body[data-version=edubeats] #console { width:960px;margin:0; }
+ body[data-version=edubeats] { overflow-x:auto; }
+ .web-toolbar { flex-wrap:wrap; }
+}
+body[data-version=edubeats2016] [data-role=page]:not([hidden]) { display:block; }
+body[data-version=edubeats2016] .verseExample a { display:inline-block; }
+body[data-version=edubeats2016] #swagArea { width:auto; }
+body[data-version=edubeats2016] #web-verse-nav { padding:15px; }
+@media(max-width:600px) {
+ body { padding-bottom:145px; }
+ .web-toolbar { gap:6px;padding:8px; }
+ .web-status { flex-basis:100%;font-size:13px;min-width:100%; }
+ .web-toolbar button { flex:1;padding:8px 4px;font-size:12px; }
+ body[data-version=edubeats2016] [data-role=page] { min-height:calc(100vh - 140px); }
+ body[data-version=edubeats2016] [data-role=content] { padding:10px; }
+ body[data-version=edubeats2016] .ui-block-a,body[data-version=edubeats2016] .ui-block-b,body[data-version=edubeats2016] .ui-block-c,body[data-version=edubeats2016] .ui-block-d { width:50%; }
+ body[data-version=edubeats2016] #points { clear:both; }
+}
+body[data-version=edubeats] #console { display:flow-root; }
+body[data-version=edubeats] #writeverse { height:auto; }
+body[data-version=edubeats] .verse { height:auto;min-height:188px;display:flow-root;padding-bottom:16px; }
+body[data-version=edubeats] .writingSample { width:100%;box-sizing:border-box; }
+body[data-version=edubeats] #stop1,body[data-version=edubeats] #stop2,body[data-version=edubeats] #stop3,body[data-version=edubeats] #stop4 { height:auto;min-height:35px;font-size:120%;line-height:1; }
+body[data-version=edubeats] #isCorrect { height:auto;min-height:104px;padding-bottom:4px; }
+body[data-version=edubeats] .answer { height:auto;min-height:19px;display:block;margin:0 auto; }
+body[data-version=edubeats] #extraSwag { height:auto;min-height:40px;clear:both; }
+body[data-version=edubeats] .writingSample:focus,body[data-version=edubeats] .writingSample[data-filled=true] { background:#fff; }

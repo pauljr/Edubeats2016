@@ -1,0 +1,14 @@
+{
+  "name": "edubeats2016-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python3 scripts/build-web.py",
+    "dev": "python3 -m http.server 4173 --directory web",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node scripts/check-web.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
